@@ -1,6 +1,6 @@
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td height="50" align="center"><B>숭실대학교 스마트시스템소프트웨어학과 2학년 20170375 오승원, 20170400 최철<BR></B></td>
+    <td height="50" align="center"><B>숭실대학교 스마트시스템소프트웨어학과 2학년 20170375 오승원, 20170400 최의철<BR></B></td>
   </tr>
 </table>
 
