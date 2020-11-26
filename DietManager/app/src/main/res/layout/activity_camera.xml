@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#ffddff">
+
+        // 나중에 ImageButton으로 변경
+        <Button
+            android:id="@+id/btnCamera2main"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="Back"
+            android:layout_alignParentLeft="true"/>
+
+        <TextView
+            android:id="@+id/tvSaveTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2020년 11월 01일"
+            android:textColor="#000000"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_centerInParent="true"/>
+
+        <Button
+            android:id="@+id/btnSelectPicture"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:text="Cam"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/ivFood"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_margin="10dp"
+        android:src="@drawable/food"/>
+
+    <TextView
+        android:id="@+id/tvFoodName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="스파게티"
+        android:textSize="18dp"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:background="#e1ecff"
+        android:layout_margin="10dp"/>
+
+    ## 껍데기2
+        // 칼로리 및 탄단지나 성분 TextView
+
+
+    // 껍데기1
+        // 총 섭취 칼로리 TextView
+</LinearLayout>
