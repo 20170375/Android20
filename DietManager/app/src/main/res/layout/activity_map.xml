@@ -12,7 +12,7 @@
 
         // 나중에 ImageButton으로 변경
         <Button
-            android:id="@+id/btnDiet2main"
+            android:id="@+id/btnMap2main"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:text="Back"
@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:text="근처에 위치한 스파게티 음식점"
             android:textColor="#000000"
-            android:textSize="20dp"
+            android:textSize="18dp"
             android:textStyle="bold"
             android:layout_centerInParent="true"/>
     </RelativeLayout>
@@ -43,6 +43,7 @@
         android:id="@+id/lvRestaurant"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"/>
+        android:layout_margin="10dp"
+        android:background="#ccffcc"/>
 
 </LinearLayout>
