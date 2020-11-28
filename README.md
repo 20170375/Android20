@@ -1,7 +1,7 @@
 # 모바일프로그래밍
 **2020년 2학기 모바일프로그래밍 (가)반 5팀** **[20170375 오승원, 20170400 최의철]**
 
-    Android Studio 3.5.1 및 AVD: Android 10(Q)
+    Android Studio 3.5.1 및 AVD: Android 10.0(Q)
 <hr/>
 
 ## 기획안
