@@ -8,7 +8,6 @@
 + [음식사진 분석 및 식단추천 앱 개발 제안](https://github.com/20170375/Android20/blob/main/%EC%9D%8C%EC%8B%9D%EC%82%AC%EC%A7%84%20%EB%B6%84%EC%84%9D%20%EB%B0%8F%20%EC%8B%9D%EB%8B%A8%EC%B6%94%EC%B2%9C%20%EC%95%B1%20%EA%B0%9C%EB%B0%9C%20%EC%A0%9C%EC%95%88.md)
 
 ## TO DO:
-+ **차트에 % 출력**
 + **음식 DB xml 생성**
   + 음식 몇개만 form 만들기 (~*식약처에서 영양소DB 가져오면 되지만 굳이 x*~)
 + **누적 DB 저장할 txt 생성 및 파일 입출력으로 데이터 R/W**
