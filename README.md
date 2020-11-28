@@ -19,7 +19,7 @@
 + **뒤로가기 및 카메라 버튼 imageButton으로 변경**
 + **[ETC] 나머지 details** (~*앱이름, 앱아이콘 등*~)
 
-## 참고자료
+## 참고
 + [[ALTools블로그] 다이어트 카메라 AI 어플 관련 ](https://blog.naver.com/estpublic/221649788043)
 
 ## 이미지 출처:
