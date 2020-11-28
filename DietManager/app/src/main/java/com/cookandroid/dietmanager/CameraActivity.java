@@ -27,8 +27,7 @@ public class CameraActivity extends AppCompatActivity {
     LinearLayout totalLayout, dataLayout;
     FrameView dataFrameView, totalFrameView;
     String saveTime, strFoodData="No Data", strTotal="No Data";
-    float kcal = (float) 935, tans = (float) 56.21, danb = (float) 34.48, jiba = (float) 27.91,
-            natt = (float) 1250.30, tKcal = (float) 2105, cKcal = (float) 1450;
+    float kcal=935f, tans=56.21f, danb=34.48f, jiba=27.91f, natt=1250.30f, cKcal=515f, tKcal=2105f;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,19 +42,8 @@ public class CameraActivity extends AppCompatActivity {
         dataLayout = (LinearLayout) findViewById(R.id.dataLayout);
         totalLayout = (LinearLayout) findViewById(R.id.totalLayout);
 
-        // 음식 분석 알고리즘 실행
-        analyzeFood();
-
-        // 데이터 String 생성
-        loadData();
-
-        // 가져온 음식 데이터
-        dataFrameView = (FrameView) new FrameView(this,360,strFoodData);
-        dataLayout.addView(dataFrameView);
-
-        // 총 칼로리 섭취량
-        totalFrameView = (FrameView) new FrameView(this,100,strTotal);
-        totalLayout.addView(totalFrameView);
+        // 오늘 칼로리 섭취량 계산
+        calKcal();
 
         // 날짜받아서 화면에 띄우기
         Calendar cal = Calendar.getInstance();
@@ -80,6 +68,10 @@ public class CameraActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        // 오늘 칼로리 섭취량 화면에 나타내기
+        totalFrameView = (FrameView) new FrameView(this,100,strTotal);
+        totalLayout.addView(totalFrameView);
 
         // 카메라 버튼 활성화 (갤러리, 카메라 선택)
         btnSelectPicture.setOnClickListener(new View.OnClickListener() {
@@ -118,7 +110,29 @@ public class CameraActivity extends AppCompatActivity {
                     InputStream inputStream = getContentResolver().openInputStream(data.getData());
                     Bitmap bmp = BitmapFactory.decodeStream(inputStream);
                     inputStream.close();
+                    ivFood.setMaxHeight(700);
                     ivFood.setImageBitmap(bmp);
+
+                    // 가져온 Bitmap 파일로 음식 분석 알고리즘 실행
+                    analyzeFood(bmp);
+
+                    // 가져온 음식 이름 화면에 나타내기
+                    tvFoodName.setVisibility(View.VISIBLE);
+
+                    // 가져온 음식 데이터로 영양성분 화면에 나타내기
+                    loadFoodInfo();
+                    dataFrameView = (FrameView) new FrameView(this,360,strFoodData);
+                    dataLayout.addView(dataFrameView);
+
+                    // DB 최신화
+                    dbUpdate();
+
+                    // 총 칼로리 섭취량 update
+                    totalLayout.removeAllViews();
+                    calKcal();
+                    totalFrameView = (FrameView) new FrameView(this,100,strTotal);
+                    totalLayout.addView(totalFrameView);
+
                 } catch (Exception e) {
                 }
             } else if (resultCode == 1) {
@@ -127,25 +141,49 @@ public class CameraActivity extends AppCompatActivity {
         }
     }
 
-    // 사진으로 음식 분석 알고리즘
-    protected void analyzeFood(){
-        ////////////////////////
-        //     Processing     //
-        ////////////////////////
+    // 오늘 섭취한 칼로리 계산
+    private void calKcal(){
+
+        ///////////////////
+        //    DB load    //
+        //    Kcal계산   //
+        ///////////////////
+
+        strTotal = "오늘 총 섭취량" + "               " + (int)cKcal
+                + " / " + (int)tKcal + "  kcal";
     }
 
-    // 데이터 가져와 String 생성하는 메소드
-    protected void loadData(){
+    // 음식 영양소 정보 불러오는 메소드
+    protected void loadFoodInfo(){
 
-        ////////////////////////
-        //   데이터 불러오기   //
-        ////////////////////////
+        ///////////////////////
+        //  음식 영양소 정보  //
+        //  load 및 대입연산  //
+        ///////////////////////
 
         strFoodData = "칼로리"     + "               " + kcal + "  kcal"  + "\n" +
                       "탄수화물"   + "           " +  tans + "  g"   + "\n" +
                       "단백질"   + "               " +  danb + "  g"   + "\n" +
                       "지방"   + "                   " +  jiba + "  g"   + "\n" +
                       "나트륨"   + "               " +  natt + "  mg";
-        strTotal = "총 섭취량" + "               " + cKcal + " / " + tKcal + "  kcal";
+    }
+
+    // 사진으로 음식 분석 알고리즘
+    protected void analyzeFood(Bitmap bmp){
+
+        //////////////////////
+        //    Processing    //
+        //////////////////////
+
+    }
+
+    //
+    protected void dbUpdate(){
+
+        //////////////////////
+        //     DB 최신화    //
+        //////////////////////
+
+        cKcal += kcal;
     }
 }

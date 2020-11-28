@@ -43,9 +43,10 @@
         <ImageView
             android:id="@+id/ivFood"
             android:layout_width="match_parent"
-            android:layout_height="265dp"
+            android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:src="@drawable/food"/>
+            android:src="@drawable/nopicture"
+            android:adjustViewBounds="true"/>
 
         <TextView
             android:id="@+id/tvFoodName"
@@ -56,7 +57,8 @@
             android:textColor="#000000"
             android:textStyle="bold"
             android:background="#e1ecff"
-            android:layout_margin="10dp"/>
+            android:layout_margin="10dp"
+            android:visibility="invisible"/>
 
         <LinearLayout
             android:id="@+id/dataLayout"

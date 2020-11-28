@@ -19,7 +19,7 @@ public class DietActivity extends AppCompatActivity {
     LinearLayout chartLayout, resultLayout;
     ChartView chartView;
     FrameView frameView;
-    float tPer=100, dPer=80, jPer=120, nPer=105;
+    float tPer=109.876f, dPer=76.543f, jPer=123.456f, nPer=105.543f;
     String strResult="No Data";
     String[] strFoodList ={"No Data",};
 
@@ -39,9 +39,6 @@ public class DietActivity extends AppCompatActivity {
         // 차트 화면에 나타내기
         chartView = (ChartView) new ChartView(this,300,tPer,dPer,jPer,nPer);
         chartLayout.addView(chartView);
-
-        // 데이터 처리과정 //
-        dataProcessing();
 
         // 영양소 섭취 현황 분석 및 String 생성
         showChart();
@@ -75,17 +72,18 @@ public class DietActivity extends AppCompatActivity {
         });
     }
 
-    // 누적된 데이터 처리 메소드
-    protected void dataProcessing(){
-
-    }
-
     // 누적 데이터 기반 영양소 섭취 현황 생성 메소드
     protected void showChart(){
 
-        ////////////////////////
-        // 누적 데이터 불러오기 //
-        ////////////////////////
+        ///////////////////
+        //    DB load    //
+        ///////////////////
+
+        ////////////////////
+        //   Percentage   //
+        //   Processing   //
+        ////////////////////
+
 
         strResult = "";
 
@@ -117,9 +115,16 @@ public class DietActivity extends AppCompatActivity {
     // 누적 데이터 기반 권장 식단 추천 메소드
     protected void recommendDiet(){
 
-        ////////////////////////////////
-        // 음식 목록에서 권장 식단 선정 //
-        ////////////////////////////////
+        ///////////////////////
+        //     음식 영양소    //
+        //     정보 load     //
+        ///////////////////////
+
+        ////////////////////////
+        //   전체 음식중에서   //
+        //   Percentage 기반  //
+        //   권장 식단 선정    //
+        ////////////////////////
 
         strFoodList = new String[]{"된장찌개", "카레라이스", "김치볶음밥", "순대국밥", "스파게티",
                 "돈까스", "삼겹살"};
