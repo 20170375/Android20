@@ -12,7 +12,7 @@
 
 <img src="./images/camera_activity1.png" width="22%" align="center">     <img src="./images/camera_activity2.png" width="22%" align="center">     <img src="./images/camera_activity3.png" width="22%" align="center">     <img src="./images/camera_activity4.png" width="22%" align="center">
 
-<img src="./images/diet_activity.png" width="25%" align="center">     <img src="./images/map_activity.png" width="25%" align="center">
+<img src="./images/diet_activity.png" width="22%" align="center">     <img src="./images/map_activity.png" width="22%" align="center">
 
 
 ## TO DO:
