@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -13,7 +13,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class DietActivity extends AppCompatActivity {
-    Button btnDiet2main;
+    ImageButton btnDiet2main;
     TextView tvFoodMap, tv1, tv2;
     ListView lvDiet;
     LinearLayout chartLayout, resultLayout;
@@ -28,7 +28,7 @@ public class DietActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_diet);
 
-        btnDiet2main = (Button) findViewById(R.id.btnDiet2main);
+        btnDiet2main = (ImageButton) findViewById(R.id.btnDiet2main);
         tvFoodMap = (TextView) findViewById(R.id.tvFoodMap);
         tv1 = (TextView) findViewById(R.id.tv1);
         tv2 = (TextView) findViewById(R.id.tv2);

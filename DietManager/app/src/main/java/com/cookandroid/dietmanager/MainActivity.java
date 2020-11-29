@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setTitle("참신한 어플 이름");
+        setTitle("YourDiet");
 
         btnDietActivity = (Button) findViewById(R.id.btnDietActivity);
         btnCameraActivity = (Button) findViewById(R.id.btnCameraActivity);

@@ -1,6 +1,5 @@
 package com.cookandroid.dietmanager;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -8,7 +7,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupMenu;
@@ -21,7 +20,7 @@ import java.util.Calendar;
 
 
 public class CameraActivity extends AppCompatActivity {
-    Button btnCamera2main, btnSelectPicture;
+    ImageButton btnCamera2main, btnSelectPicture;
     TextView tvSaveTime, tvFoodName;
     ImageView ivFood;
     LinearLayout totalLayout, dataLayout;
@@ -34,8 +33,8 @@ public class CameraActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
 
-        btnCamera2main = (Button) findViewById(R.id.btnCamera2main);
-        btnSelectPicture = (Button) findViewById(R.id.btnSelectPicture);
+        btnCamera2main = (ImageButton) findViewById(R.id.btnCamera2main);
+        btnSelectPicture = (ImageButton) findViewById(R.id.btnSelectPicture);
         tvSaveTime = (TextView) findViewById(R.id.tvSaveTime);
         tvFoodName = (TextView) findViewById(R.id.tvFoodName);
         ivFood = (ImageView) findViewById(R.id.ivFood);

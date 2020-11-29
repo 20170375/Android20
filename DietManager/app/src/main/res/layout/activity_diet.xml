@@ -11,12 +11,12 @@
         android:orientation="horizontal"
         android:background="#ffddff">
 
-        // 나중에 ImageButton으로 변경
-        <Button
+        <ImageButton
             android:id="@+id/btnDiet2main"
+            android:src="@drawable/ic_menu_back"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
-            android:text="Back"/>
+            android:background="@android:color/transparent"/>
 
         <TextView
             android:layout_width="wrap_content"

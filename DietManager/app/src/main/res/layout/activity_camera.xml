@@ -15,11 +15,12 @@
             android:background="#ffddff">
 
             // 나중에 ImageButton으로 변경
-            <Button
+            <ImageButton
                 android:id="@+id/btnCamera2main"
+                android:src="@drawable/ic_menu_back"
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
-                android:text="Back"
+                android:background="@android:color/transparent"
                 android:layout_alignParentLeft="true"/>
 
             <TextView
@@ -32,11 +33,12 @@
                 android:textStyle="bold"
                 android:layout_centerInParent="true"/>
 
-            <Button
+            <ImageButton
                 android:id="@+id/btnSelectPicture"
+                android:src="@drawable/ic_menu_camera"
                 android:layout_width="55dp"
                 android:layout_height="wrap_content"
-                android:text="Cam"
+                android:background="@android:color/transparent"
                 android:layout_alignParentRight="true"/>
         </RelativeLayout>
 

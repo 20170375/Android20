@@ -3,14 +3,14 @@ package com.cookandroid.dietmanager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MapActivity extends AppCompatActivity {
-    Button btnMap2main;
+    ImageButton btnMap2main;
     TextView tvFoodMap;
     ListView lvRestaurant;
 
@@ -19,7 +19,7 @@ public class MapActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
 
-        btnMap2main = (Button) findViewById(R.id.btnMap2main);
+        btnMap2main = (ImageButton) findViewById(R.id.btnMap2main);
         tvFoodMap = (TextView) findViewById(R.id.tvFoodMap);
         lvRestaurant = (ListView) findViewById(R.id.lvRestaurant);
 
