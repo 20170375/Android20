@@ -56,7 +56,7 @@ public class CameraActivity extends AppCompatActivity {
         if(hour>=5 && hour<12){
             saveTime = saveTime + "아침식사";
         } else if(hour>=12 && hour<18){
-            saveTime = saveTime + "점식식사";
+            saveTime = saveTime + "점심식사";
         } else{
             saveTime = saveTime + "저녁식사";
         }
