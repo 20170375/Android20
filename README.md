@@ -12,6 +12,8 @@
 
 <img src="./images/main_activity.png" width="22%" align="center">
 
+** **
+
 ### 1. 오늘의 식단 추천
 
 **화면에 섭취한 영양소 정보를 차트로 보여주고, 이 차트를 기반으로 추천 식단 리스트를 보여준다.**
@@ -19,6 +21,8 @@
 **리스트에서 음식을 선택하면 근처에 있는 음식점을 검색하고 이를 보여준다**
 
 <img src="./images/diet_activity.png" width="22%" align="center">     <img src="./images/map_activity.png" width="22%" align="center">
+
+** **
 
 ### 2. 식사 등록
 
