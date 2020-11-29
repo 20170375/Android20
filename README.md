@@ -7,18 +7,28 @@
 ## 기획안
 + [음식사진 분석 및 식단추천 앱 개발 제안](https://github.com/20170375/Android20/blob/main/%EC%9D%8C%EC%8B%9D%EC%82%AC%EC%A7%84%20%EB%B6%84%EC%84%9D%20%EB%B0%8F%20%EC%8B%9D%EB%8B%A8%EC%B6%94%EC%B2%9C%20%EC%95%B1%20%EA%B0%9C%EB%B0%9C%20%EC%A0%9C%EC%95%88.md)
 
-## 울라라라
+## 어플 구동 화면
 **처음 어플을 키면 버튼 3개가 눈에 보인다.** "오늘의 식단 추천", "식사 등록", "사용자 정보 변경"
 
 <img src="./images/main_activity.png" width="22%" align="center">
 
-**1. 오늘의 식단 추천**
-****
+### 1. 오늘의 식단 추천
+
+**화면에 섭취한 영양소 정보를 차트로 보여주고, 이 차트를 기반으로 추천 식단 리스트를 보여준다.**
+
+**리스트에서 음식을 선택하면 근처에 있는 음식점을 검색하고 이를 보여준다**
 
 <img src="./images/diet_activity.png" width="22%" align="center">     <img src="./images/map_activity.png" width="22%" align="center">
 
-**2. 식사 등록**
-****
+### 2. 식사 등록
+
+**우측 상단 카메라 버튼을 누르면 갤러리 또는 카메라를 선택하는 메뉴가 나타난다.**
+
+**갤러리에서 샘플 이미지를 가져오자.** 음식 사진 분석 알고리즘**을 통해 어떤 음식인지 식별하고 이 음식의 영양정보를 화면에 보여준다.**
+
+**이후 섭취한 영양소 정보를 최신화하고 나면, 화면 하단 오늘 칼로리 섭취량이 업데이트 된 것을 확인할 수 있다.**
+
+**우측 상단 카메라 버튼이 [Instagram](https://www.instagram.com/) 버튼으로 변경된 것을 볼 수 있는데, 이 버튼을 누르면 #YourDiet 해시태그와 함께 아주 쉽게 인스타그램에 업로드할 수 있다.**
 
 <img src="./images/camera_activity1.png" width="22%" align="center">     <img src="./images/camera_activity2.png" width="22%" align="center">     <img src="./images/camera_activity3.png" width="22%" align="center">     <img src="./images/camera_activity4.png" width="22%" align="center">
 
