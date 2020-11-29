@@ -14,6 +14,7 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import java.io.File;
@@ -23,6 +24,7 @@ import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
     Button btnDietActivity, btnCameraActivity;
+    ImageButton btnEdit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnDietActivity = (Button) findViewById(R.id.btnDietActivity);
         btnCameraActivity = (Button) findViewById(R.id.btnCameraActivity);
+        btnEdit = (ImageButton) findViewById(R.id.btnEdit);
 
         btnDietActivity.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,6 +49,17 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), CameraActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        btnEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                ///////////////////////
+                //   고객 정보 수정   //
+                ///////////////////////
+
             }
         });
 

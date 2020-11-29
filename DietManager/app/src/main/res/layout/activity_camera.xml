@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -14,7 +13,6 @@
             android:layout_height="50dp"
             android:background="#ffddff">
 
-            // 나중에 ImageButton으로 변경
             <ImageButton
                 android:id="@+id/btnCamera2main"
                 android:src="@drawable/ic_menu_back"
@@ -40,6 +38,8 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:layout_alignParentRight="true"/>
+
+
         </RelativeLayout>
 
         <ImageView
@@ -69,7 +69,22 @@
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
             android:orientation="horizontal" />
+
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/btnInstagram"
+        android:src="@drawable/instagram"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="-15dp"
+        android:layout_marginRight="-15dp"
+        android:layout_alignParentRight="true"
+        android:background="@android:color/transparent"
+        android:scaleX="0.5"
+        android:scaleY="0.5"
+        android:visibility="invisible"
+        android:clickable="false"/>
 
     <LinearLayout
         android:id="@+id/totalLayout"

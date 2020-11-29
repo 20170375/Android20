@@ -10,7 +10,6 @@
         android:layout_height="50dp"
         android:background="#ffddff">
 
-        // 나중에 ImageButton으로 변경
         <ImageButton
             android:id="@+id/btnMap2main"
             android:src="@drawable/ic_menu_back"

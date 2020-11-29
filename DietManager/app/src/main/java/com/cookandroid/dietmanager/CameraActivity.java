@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -20,7 +21,7 @@ import java.util.Calendar;
 
 
 public class CameraActivity extends AppCompatActivity {
-    ImageButton btnCamera2main, btnSelectPicture;
+    ImageButton btnCamera2main, btnSelectPicture, btnInstagram;
     TextView tvSaveTime, tvFoodName;
     ImageView ivFood;
     LinearLayout totalLayout, dataLayout;
@@ -35,6 +36,7 @@ public class CameraActivity extends AppCompatActivity {
 
         btnCamera2main = (ImageButton) findViewById(R.id.btnCamera2main);
         btnSelectPicture = (ImageButton) findViewById(R.id.btnSelectPicture);
+        btnInstagram = (ImageButton) findViewById(R.id.btnInstagram);
         tvSaveTime = (TextView) findViewById(R.id.tvSaveTime);
         tvFoodName = (TextView) findViewById(R.id.tvFoodName);
         ivFood = (ImageView) findViewById(R.id.ivFood);
@@ -131,6 +133,11 @@ public class CameraActivity extends AppCompatActivity {
                     calKcal();
                     totalFrameView = (FrameView) new FrameView(this,100,strTotal);
                     totalLayout.addView(totalFrameView);
+
+                    btnSelectPicture.setVisibility(View.INVISIBLE);
+                    btnSelectPicture.setClickable(false);
+                    btnInstagram.setVisibility(View.VISIBLE);
+                    btnInstagram.setClickable(true);
 
                 } catch (Exception e) {
                 }
