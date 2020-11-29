@@ -51,11 +51,15 @@
 + **칼로리 섭취량 계산기 함수**
     + 나이/몸무게 txt로 기록해서 (main에서 수정가능하게)
     + 권장 칼로리 섭취량 계산후 화면에 나타내기
-+ **[ETC] 나머지 details** (~*아이콘(쿠우쿠우 변형) 등*~)
 
 ## 참고
 + [[ALTools블로그] 다이어트 카메라 AI 어플 관련 ](https://blog.naver.com/estpublic/221649788043)
 
 ## 이미지 출처:
-+ [스파게티](https://www.google.co.kr/maps/place/%EB%9A%9D%EB%B0%B0%EA%B8%B0%EC%8A%A4%ED%8C%8C%EA%B2%8C%ED%8B%B0/@37.4947479,126.95682,16z/data=!4m8!1m2!2m1!1z7Iqk7YyM6rKM7Yuw!3m4!1s0x357ca1d403742b15:0x3da897145f0419c9!8m2!3d37.4946287!4d126.9589658)
++ [스파게티 Google지도](https://www.google.co.kr/maps/search/%EC%8A%A4%ED%8C%8C%EA%B2%8C%ED%8B%B0/@37.4945461,126.956212,16.25z)
++ [뚝배기 스파게티 Google지도](https://www.google.co.kr/maps/place/%EB%9A%9D%EB%B0%B0%EA%B8%B0%EC%8A%A4%ED%8C%8C%EA%B2%8C%ED%8B%B0/@37.4947479,126.95682,16z/data=!4m8!1m2!2m1!1z7Iqk7YyM6rKM7Yuw!3m4!1s0x357ca1d403742b15:0x3da897145f0419c9!8m2!3d37.4946287!4d126.9589658)
 + [뚝배기 스파게티 네이버지도](https://map.naver.com/v5/search/%EC%8A%A4%ED%8C%8C%EA%B2%8C%ED%8B%B0/place/1246383729?c=14132389.6091893,4508314.4503595,15,0,0,0,dh&placePath=%3F%2526)
++ [햄버거 일러스트](https://pixabay.com/ko/vectors/%ED%96%84%EB%B2%84%EA%B1%B0-%EB%94%94%EB%9F%AD%EC%8A%A4-%EA%B1%B0-%EB%8C%80-%ED%95%9C-307349/)
++ [계란 일러스트](https://pixabay.com/ko/vectors/%EC%95%84%EC%B9%A8-%EC%8B%9D%EC%82%AC-%EB%8B%AC%EA%B1%80-%ED%86%A0%EC%8A%A4%ED%8A%B8-32473/)
++ [스시 일러스트](https://pixabay.com/ko/vectors/%EC%B4%88%EB%B0%A5-%EC%8A%A4%EC%8B%9C-%EB%A1%A4-%EB%9D%BC%EC%9D%B4%EC%8A%A4-%EC%9D%BC%EB%B3%B8%EC%96%B4-296521/)
++ [식사 일러스트](https://pixabay.com/ko/vectors/%EC%A0%91%EC%8B%9C-%EC%9D%8C%EC%8B%9D-%EC%8B%9D%EC%82%AC-%EC%A0%80%EB%85%81-%EC%8B%9D%EC%82%AC-576381/)
