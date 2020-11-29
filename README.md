@@ -4,6 +4,9 @@
     Android Studio 3.5.1 및 AVD: Android 10.0(Q)
 <hr/>
 
+## 코드 계층도
+<img src="./images/class_image.png" width="15%" align="center">     <img src="./images/hierarchy.png" width="40%" align="center">
+
 ## 기획안
 + [음식사진 분석 및 식단추천 앱 개발 제안](https://github.com/20170375/Android20/blob/main/%EC%9D%8C%EC%8B%9D%EC%82%AC%EC%A7%84%20%EB%B6%84%EC%84%9D%20%EB%B0%8F%20%EC%8B%9D%EB%8B%A8%EC%B6%94%EC%B2%9C%20%EC%95%B1%20%EA%B0%9C%EB%B0%9C%20%EC%A0%9C%EC%95%88.md)
 
