@@ -10,7 +10,12 @@
 ## 울라라라
 <img src="./images/main_activity.png" width="22%" align="center">
 
+**처음 어플을 키면 버튼 3개가 눈에 보인다.** "오늘의 식단 추천", "식사 등록", "사용자 정보 변경"
+
 <img src="./images/camera_activity1.png" width="22%" align="center">     <img src="./images/camera_activity2.png" width="22%" align="center">     <img src="./images/camera_activity3.png" width="22%" align="center">     <img src="./images/camera_activity4.png" width="22%" align="center">
+
+**1. 오늘의 식단 추천**
+****
 
 <img src="./images/diet_activity.png" width="22%" align="center">     <img src="./images/map_activity.png" width="22%" align="center">
 
