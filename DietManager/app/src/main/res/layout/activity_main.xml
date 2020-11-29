@@ -52,6 +52,7 @@
             android:text="Y o u r D i e t"
             android:textColor="#000000"
             android:textSize="40dp"
+            android:textStyle="bold"
             android:gravity="center"/>
 
         <Button
