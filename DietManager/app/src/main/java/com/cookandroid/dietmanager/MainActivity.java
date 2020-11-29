@@ -18,13 +18,16 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
     Button btnDietActivity, btnCameraActivity;
     ImageButton btnEdit;
+    View dialogView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,11 +58,31 @@ public class MainActivity extends AppCompatActivity {
         btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String str;
+                String strs[] = {"23", "60"};
 
-                ///////////////////////
-                //   고객 정보 수정   //
-                ///////////////////////
+                // 사용자 정보 불러오기(내부 저장소 접근)
+                try {
+                    FileInputStream inFs = openFileInput("user_info.txt");
+                    byte[] txt = new byte[20];
+                    inFs.read(txt);
+                    str = new String(txt);
 
+                    // user_info.txt가 없거나 공백이면, 나이 23 몸무게 60으로 설정
+                    if(!str.contains(" ")) {
+                        strs[0] = "23";
+                        strs[1] = "60";
+                    } else{
+                        strs = str.split(" ");
+                    }
+                    inFs.close();
+                } catch (IOException e){
+                    Toast.makeText(getApplicationContext(),"파일 없음",
+                            Toast.LENGTH_LONG).show();
+                }
+                NPDialog npDialog = new NPDialog();
+                npDialog.strs = strs;
+                npDialog.show(getSupportFragmentManager(),"사용자 정보 수정");
             }
         });
 
@@ -90,9 +113,9 @@ public class MainActivity extends AppCompatActivity {
                 fos = new FileOutputStream(image);
             }
             bmp.compress(Bitmap.CompressFormat.PNG, 100, fos);
-            Objects.requireNonNull(fos).close();
-            Toast.makeText(this,"샘플 이미지를 불러왔습니다." +
-                    "\n/Pictures/sample.jpg",Toast.LENGTH_LONG).show();
+            fos.close();
+            Toast.makeText(this, "샘플 이미지를 불러왔습니다." +
+                    "\n/Pictures/sample.jpg", Toast.LENGTH_LONG).show();
         } catch (Exception e){
             Toast.makeText(this,"Fail to load sample.jpg",Toast.LENGTH_LONG).show();
         }
