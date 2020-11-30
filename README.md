@@ -7,9 +7,6 @@
 ## 기획안
 + [음식사진 분석 및 식단추천 앱 개발 제안](https://github.com/20170375/Android20/blob/main/%EC%9D%8C%EC%8B%9D%EC%82%AC%EC%A7%84%20%EB%B6%84%EC%84%9D%20%EB%B0%8F%20%EC%8B%9D%EB%8B%A8%EC%B6%94%EC%B2%9C%20%EC%95%B1%20%EA%B0%9C%EB%B0%9C%20%EC%A0%9C%EC%95%88.md)
 
-## 코드 계층도
-<img src="./images/class_image.png" width="15%" align="center">     <img src="./images/hierarchy.png" width="40%" align="center">
-
 ## 어플 구동 화면
 **처음 어플을 키면 버튼 3개가 눈에 보인다.** "오늘의 식단 추천", "식사 등록", "사용자 정보 변경"
 
@@ -41,7 +38,8 @@
 
 <img src="./images/camera_activity1.png" width="22%" align="center">     <img src="./images/camera_activity2.png" width="22%" align="center">     <img src="./images/camera_activity3.png" width="22%" align="center">     <img src="./images/camera_activity4.png" width="22%" align="center">
 
-
+## 코드 계층도
+<img src="./images/class_image.png" width="15%" align="center">     <img src="./images/hierarchy.png" width="40%" align="center">
 
 ## TO DO:
 + **음식 DB xml 생성**
