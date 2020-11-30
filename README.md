@@ -4,9 +4,6 @@
     Android Studio 3.5.1 및 AVD: Android 10.0(Q)
 <hr/>
 
-## 코드 계층도
-<img src="./images/class_image.png" width="15%" align="center">     <img src="./images/hierarchy.png" width="40%" align="center">
-
 ## 기획안
 + [음식사진 분석 및 식단추천 앱 개발 제안](https://github.com/20170375/Android20/blob/main/%EC%9D%8C%EC%8B%9D%EC%82%AC%EC%A7%84%20%EB%B6%84%EC%84%9D%20%EB%B0%8F%20%EC%8B%9D%EB%8B%A8%EC%B6%94%EC%B2%9C%20%EC%95%B1%20%EA%B0%9C%EB%B0%9C%20%EC%A0%9C%EC%95%88.md)
 
@@ -41,7 +38,8 @@
 
 <img src="./images/camera_activity1.png" width="22%" align="center">     <img src="./images/camera_activity2.png" width="22%" align="center">     <img src="./images/camera_activity3.png" width="22%" align="center">     <img src="./images/camera_activity4.png" width="22%" align="center">
 
-
+## 코드 계층도
+<img src="./images/class_image.png" width="15%" align="center">     <img src="./images/hierarchy.png" width="40%" align="center">
 
 ## TO DO:
 + **음식 DB xml 생성**
@@ -69,3 +67,4 @@
 + [계란 일러스트](https://pixabay.com/ko/vectors/%EC%95%84%EC%B9%A8-%EC%8B%9D%EC%82%AC-%EB%8B%AC%EA%B1%80-%ED%86%A0%EC%8A%A4%ED%8A%B8-32473/)
 + [스시 일러스트](https://pixabay.com/ko/vectors/%EC%B4%88%EB%B0%A5-%EC%8A%A4%EC%8B%9C-%EB%A1%A4-%EB%9D%BC%EC%9D%B4%EC%8A%A4-%EC%9D%BC%EB%B3%B8%EC%96%B4-296521/)
 + [식사 일러스트](https://pixabay.com/ko/vectors/%EC%A0%91%EC%8B%9C-%EC%9D%8C%EC%8B%9D-%EC%8B%9D%EC%82%AC-%EC%A0%80%EB%85%81-%EC%8B%9D%EC%82%AC-576381/)
++ [앱 아이콘 chef](https://pixabay.com/ko/vectors/%EC%9A%94%EB%A6%AC%EC%82%AC-%EC%95%9E-%ED%98%9C%ED%83%9D-%EA%B5%BD%EA%B3%A0-%EC%82%AC%EB%9E%8C-2409158/)
