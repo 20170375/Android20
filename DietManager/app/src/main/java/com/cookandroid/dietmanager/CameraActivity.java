@@ -1,5 +1,6 @@
 package com.cookandroid.dietmanager;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -16,6 +17,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.Calendar;
 
@@ -24,9 +28,9 @@ public class CameraActivity extends AppCompatActivity {
     ImageButton btnCamera2main, btnSelectPicture, btnInstagram;
     TextView tvSaveTime, tvFoodName;
     ImageView ivFood;
-    LinearLayout totalLayout, dataLayout;
-    FrameView dataFrameView, totalFrameView;
-    String saveTime, strFoodData="No Data", strTotal="No Data";
+    LinearLayout dataLayout, kcalLayout;
+    FrameView dataFrameView, kcalFrameView;
+    String saveTime, strFoodName="No data", strFoodData="No Data", strTotal="No Data";
     float kcal=935f, tans=56.21f, danb=34.48f, jiba=27.91f, natt=1250.30f, cKcal=515f, tKcal=2105f;
 
     @Override
@@ -41,7 +45,7 @@ public class CameraActivity extends AppCompatActivity {
         tvFoodName = (TextView) findViewById(R.id.tvFoodName);
         ivFood = (ImageView) findViewById(R.id.ivFood);
         dataLayout = (LinearLayout) findViewById(R.id.dataLayout);
-        totalLayout = (LinearLayout) findViewById(R.id.totalLayout);
+        kcalLayout = (LinearLayout) findViewById(R.id.kcalLayout);
 
         // 오늘 칼로리 섭취량 계산
         calKcal();
@@ -71,8 +75,8 @@ public class CameraActivity extends AppCompatActivity {
         });
 
         // 오늘 칼로리 섭취량 화면에 나타내기
-        totalFrameView = (FrameView) new FrameView(this,100,strTotal);
-        totalLayout.addView(totalFrameView);
+        kcalFrameView = (FrameView) new FrameView(this,100,strTotal);
+        kcalLayout.addView(kcalFrameView);
 
         // 카메라 버튼 활성화 (갤러리, 카메라 선택)
         btnSelectPicture.setOnClickListener(new View.OnClickListener() {
@@ -120,20 +124,22 @@ public class CameraActivity extends AppCompatActivity {
                     // 가져온 음식 이름 화면에 나타내기
                     tvFoodName.setVisibility(View.VISIBLE);
 
-                    // 가져온 음식 데이터로 영양성분 화면에 나타내기
+                    // 가져온 음식 정보 화면에 나타내기
                     loadFoodInfo();
+                    tvFoodName.setText(strFoodName);
                     dataFrameView = (FrameView) new FrameView(this,360,strFoodData);
                     dataLayout.addView(dataFrameView);
 
                     // DB 최신화
                     dbUpdate();
 
-                    // 총 칼로리 섭취량 update
-                    totalLayout.removeAllViews();
+                    // 오늘 칼로리 섭취량 update
+                    kcalLayout.removeAllViews();
                     calKcal();
-                    totalFrameView = (FrameView) new FrameView(this,100,strTotal);
-                    totalLayout.addView(totalFrameView);
+                    kcalFrameView = (FrameView) new FrameView(this,100,strTotal);
+                    kcalLayout.addView(kcalFrameView);
 
+                    // Instagram 버튼 활성화
                     btnSelectPicture.setVisibility(View.INVISIBLE);
                     btnSelectPicture.setClickable(false);
                     btnInstagram.setVisibility(View.VISIBLE);
@@ -149,14 +155,55 @@ public class CameraActivity extends AppCompatActivity {
 
     // 오늘 섭취한 칼로리 계산
     private void calKcal(){
+        // DB load
+        try {
+            FileInputStream inFs = openFileInput("db.txt");
+            byte[] txt = new byte[1000];
+            int txtNo;
+            String str = "";
+            while((txtNo=inFs.read()) != -1){
+                str += (char)txtNo;
+            }
+            inFs.close();
 
-        ///////////////////
-        //    DB load    //
-        //    Kcal계산   //
-        ///////////////////
+            // db.txt가 없거나 공백이면, 0으로 설정
+            if(!str.contains(" ")) {
+                cKcal = 0;
+            } else{
+                String[] line = str.split("\n");
 
-        strTotal = "오늘 총 섭취량" + "               " + (int)cKcal
-                + " / " + (int)tKcal + "  kcal";
+                // make String today
+                String today = "";
+                Calendar cal = Calendar.getInstance();
+                today += cal.get(Calendar.YEAR) + ":";
+                today += cal.get(Calendar.MONTH) + 1 + ":";
+                today += cal.get(Calendar.DAY_OF_MONTH) + ":";
+                today += cal.get(Calendar.HOUR_OF_DAY) + ":";
+                today += cal.get(Calendar.MINUTE);
+
+                // find today data
+                int i=0;
+                while(i<line.length){
+                    if(line[i].contains(today))
+                        break;
+                    i++;
+                }
+
+                cKcal = 0;
+                while(i<line.length) {
+                    String[] word = line[i].split(" ");
+                    cKcal += Float.parseFloat(word[2]);
+                    i++;
+                }
+            }
+        } catch (IOException e){
+            Toast.makeText(getApplicationContext(),"파일 없음",
+                    Toast.LENGTH_LONG).show();
+        }
+
+        // 불러온 정보로 String 만들기
+        strTotal = "오늘 총 섭취량" + "               " + (int)cKcal +
+                " / " + (int)tKcal + "  kcal";
     }
 
     // 음식 영양소 정보 불러오는 메소드
@@ -167,6 +214,7 @@ public class CameraActivity extends AppCompatActivity {
         //  load 및 대입연산  //
         ///////////////////////
 
+        strFoodName = "스파게티";
         strFoodData = "칼로리"     + "               " + kcal + "  kcal"  + "\n" +
                       "탄수화물"   + "           " +  tans + "  g"   + "\n" +
                       "단백질"   + "               " +  danb + "  g"   + "\n" +
@@ -183,13 +231,29 @@ public class CameraActivity extends AppCompatActivity {
 
     }
 
-    //
+    // DB 최신화 메소드
     protected void dbUpdate(){
+        String str = "";
 
-        //////////////////////
-        //     DB 최신화    //
-        //////////////////////
+        // "YY:MM:DD:HH:MM"
+        Calendar cal = Calendar.getInstance();
+        str += cal.get(Calendar.YEAR) + ":";
+        str += cal.get(Calendar.MONTH) + 1 + ":";
+        str += cal.get(Calendar.DAY_OF_MONTH) + ":";
+        str += cal.get(Calendar.HOUR_OF_DAY) + ":";
+        str += cal.get(Calendar.MINUTE) + " ";
 
-        cKcal += kcal;
+        // "음식이름" + "칼로리" + "탄수화물" + "단백질" + "지방" + "나트륨"
+        str += strFoodName + " ";
+        str += kcal + " " + tans + " " + danb + " " + jiba + " " + natt + "\n";
+
+        try {
+            FileOutputStream outFs = openFileOutput("db.txt", Context.MODE_PRIVATE);
+            outFs.write(str.getBytes());
+            outFs.close();
+        } catch (Exception e){
+            Toast.makeText(getApplicationContext(),str,
+                    Toast.LENGTH_LONG).show();
+        }
     }
 }
