@@ -41,6 +41,8 @@
 ## 코드 계층도
 <img src="./images/class_list.png" width="15%" align="center">     <img src="./images/class_hierarchy.png" width="40%" align="center">
 
+->[코드 설명](https://github.com/20170375/Android20/blob/main/%EC%BD%94%EB%93%9C%EC%84%A4%EB%AA%85.md)
+
 ## TO DO
 + **사용자 정보 변경 버튼**
     + txt파일 저장기능
