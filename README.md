@@ -42,10 +42,11 @@
 <img src="./images/class_list.png" width="15%" align="center">     <img src="./images/class_hierarchy.png" width="40%" align="center">
 
 ## TO DO:
-+ **칼로리 섭취량 계산기 함수**
-    + 권장 칼로리 섭취량 계산후 화면에 나타내기
 + **사용자 정보 변경 버튼**
     + txt파일 저장기능 
++ **칼로리 섭취량 계산기 함수**
+    + 권장 칼로리 섭취량 계산후 화면에 나타내기
++ **카메라로 찍은 사진 사용 구현**
 + **맵View Gps기반 구현**
   + GPS 접근 권한 manifest
   + 선택된 "음식" 식당 맵 검색 & 리스트에 어댑터로 만들어 출력
