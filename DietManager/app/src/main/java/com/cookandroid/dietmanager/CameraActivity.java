@@ -123,7 +123,6 @@ public class CameraActivity extends AppCompatActivity {
                     // 가져온 Bitmap 파일로 음식 분석 알고리즘 실행
                     analyzeFood(bmp);
 
-
                     // 가져온 음식 정보 화면에 나타내기
                     loadFoodInfo();
                     tvFoodName.setText(strFoodKor);
@@ -166,36 +165,31 @@ public class CameraActivity extends AppCompatActivity {
                 str += (char)txtNo;
             inFs.close();
 
-            // db.txt가 없거나 공백이면, 0으로 설정
-//            if(!str.contains(" ")){
-//                cKcal = 0;
-//                Toast.makeText(this,"No Data",Toast.LENGTH_SHORT).show();
-//            } else{
-                String[] line = str.split("\n");
+            // line 단위로 분할
+            String[] line = str.split("\n");
 
-                // make String today
-                String today = "";
-                Calendar cal = Calendar.getInstance();
-                today += cal.get(Calendar.YEAR) + ":";
-                today += cal.get(Calendar.MONTH) + 1 + ":";
-                today += cal.get(Calendar.DAY_OF_MONTH) + ":";
-                today += cal.get(Calendar.HOUR_OF_DAY) + ":";
+            // make String today
+            String today = "";
+            Calendar cal = Calendar.getInstance();
+            today += cal.get(Calendar.YEAR) + ":";
+            today += cal.get(Calendar.MONTH) + 1 + ":";
+            today += cal.get(Calendar.DAY_OF_MONTH) + ":";
+            today += cal.get(Calendar.HOUR_OF_DAY) + ":";
 
-                // find today data
-                int i=0;
-                while(i<line.length){
-                    if(line[i].contains(today))
-                        break;
-                    i++;
-                }
+            // find today data
+            int i=0;
+            while(i<line.length){
+                if(line[i].contains(today))
+                    break;
+                i++;
+            }
 
-                cKcal = 0;
-                while(i<line.length) {
-                    String[] word = line[i].split(" ");
-                    cKcal += Float.parseFloat(word[2]);
-                    i++;
-                }
-//            }
+            cKcal = 0;
+            while(i<line.length) {
+                String[] word = line[i].split(" ");
+                cKcal += Float.parseFloat(word[2]);
+                i++;
+            }
         } catch (IOException e){
             cKcal = 0;
         }
