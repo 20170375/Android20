@@ -34,7 +34,7 @@
 
 **이후 섭취한 영양소 정보를 최신화하고 나면, 화면 하단 오늘 칼로리 섭취량이 업데이트 된 것을 확인할 수 있다.**
 
-**우측 상단 카메라 버튼이 [Instagram](https://www.instagram.com/) 버튼으로 변경된 것을 볼 수 있는데, 이 버튼을 누르면 #YourDiet 해시태그와 함께 아주 쉽게 인스타그램에 업로드할 수 있다.**
+**우측 상단 카메라 버튼이 [Instagram](https://www.instagram.com/) 버튼으로 변경된 것을 볼 수 있는데, 이 버튼을 누르면** #YourDiet **해시태그와 함께 아주 쉽게 인스타그램에 업로드할 수 있다.**
 
 <img src="./images/camera_activity1.png" width="22%" align="center">     <img src="./images/camera_activity2.png" width="22%" align="center">     <img src="./images/camera_activity3.png" width="22%" align="center">     <img src="./images/camera_activity4.png" width="22%" align="center">
 
