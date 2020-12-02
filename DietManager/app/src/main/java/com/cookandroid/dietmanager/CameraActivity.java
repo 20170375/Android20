@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -174,7 +173,6 @@ public class CameraActivity extends AppCompatActivity {
             today += cal.get(Calendar.YEAR) + ":";
             today += cal.get(Calendar.MONTH) + 1 + ":";
             today += cal.get(Calendar.DAY_OF_MONTH) + ":";
-            today += cal.get(Calendar.HOUR_OF_DAY) + ":";
 
             // find today data
             int i=0;
@@ -270,7 +268,6 @@ public class CameraActivity extends AppCompatActivity {
                 str += (char)txtNo;
             inFs.close();
         } catch (IOException e){
-//            Toast.makeText(this, "fail to load db.txt", Toast.LENGTH_LONG).show();
         }
 
         // "YY:MM:DD:HH:MM"
@@ -285,6 +282,7 @@ public class CameraActivity extends AppCompatActivity {
         str += strFoodEng + " ";
         str += kcal + " " + tans + " " + danb + " " + jiba + " " + natt + "\n";
 
+        // DB save
         try {
             FileOutputStream outFs = openFileOutput("db.txt", Context.MODE_PRIVATE);
             outFs.write(str.getBytes());

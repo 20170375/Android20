@@ -10,8 +10,9 @@ import android.widget.NumberPicker;
 
 import androidx.fragment.app.DialogFragment;
 
-public class NPDialog extends DialogFragment {
-    public String strs[] = {"23","60"};
+public class NumberPickerDialog extends DialogFragment {
+    private NumberPicker.OnValueChangeListener valueChangeListener;
+    public String strs[] = {"",};
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -29,20 +30,19 @@ public class NPDialog extends DialogFragment {
         npAge.setMinValue(1);
         npAge.setMaxValue(100);
         npAge.setValue(Integer.parseInt(strs[0]));
+        npAge.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
 
         npWeight.setMinValue(30);
         npWeight.setMaxValue(120);
         npWeight.setValue(Integer.parseInt(strs[1]));
+        npWeight.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
 
         builder.setView(dialog);
         builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                try {
-                    // user_info.txt FileOutStream으로 저장
-
-                } catch (Exception e){
-                }
+                strs[0] = Integer.toString(npAge.getValue());
+                strs[1] = Integer.toString(npWeight.getValue());
             }
         });
         builder.setNegativeButton("취소",null);

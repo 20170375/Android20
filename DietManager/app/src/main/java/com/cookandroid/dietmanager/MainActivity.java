@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentResolver;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -18,6 +19,7 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Objects;
@@ -55,31 +57,37 @@ public class MainActivity extends AppCompatActivity {
         btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String str;
-                String strs[] = {"23", "60"};
+                String str = "";
+                String strs[] = {"24", "60"};
 
-                // 사용자 정보 불러오기(내부 저장소 접근)
+                // 사용자 정보 load
                 try {
                     FileInputStream inFs = openFileInput("user_info.txt");
-                    byte[] txt = new byte[20];
-                    inFs.read(txt);
-                    str = new String(txt);
-
-                    // user_info.txt가 없거나 공백이면, 나이 23 몸무게 60으로 설정
-                    if(!str.contains(" ")) {
-                        strs[0] = "23";
-                        strs[1] = "60";
-                    } else{
-                        strs = str.split(" ");
-                    }
+                    byte[] txt = new byte[10];
+                    int txtNo;
+                    while((txtNo=inFs.read()) != -1)
+                        str += (char)txtNo;
                     inFs.close();
+
+                    strs = str.split(" ");
                 } catch (IOException e){
-                    Toast.makeText(getApplicationContext(),"파일 없음",
-                            Toast.LENGTH_LONG).show();
                 }
-                NPDialog npDialog = new NPDialog();
+
+                // NumberPicker Dialog 생성
+                NumberPickerDialog npDialog = new NumberPickerDialog();
                 npDialog.strs = strs;
                 npDialog.show(getSupportFragmentManager(),"사용자 정보 수정");
+
+                // 사용자 정보 save
+                try {
+                    strs = npDialog.strs;
+                    str = strs[0] + " " + strs[1];
+
+                    FileOutputStream outFs = openFileOutput("user_info.txt", Context.MODE_PRIVATE);
+                    outFs.write(str.getBytes());
+                    outFs.close();
+                } catch (Exception e){
+                }
             }
         });
 
