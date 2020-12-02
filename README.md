@@ -55,6 +55,7 @@
 + **음식 DB xml 생성**
   + 음식 몇개만 샘플form 만들기 (~*식약처에서 영양소DB 가져오면 되지만 굳이 x*~)
 + **인스타그램 버튼 활성화**
+  + [#YourDiet](https://www.instagram.com/explore/tags/YourDiet/) 해시태그가 이미 있다?
 
 ## 참고
 + [[ALTools블로그] 다이어트 카메라 AI 어플 관련 ](https://blog.naver.com/estpublic/221649788043)
