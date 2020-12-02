@@ -42,8 +42,6 @@
 <img src="./images/class_image.png" width="15%" align="center">     <img src="./images/hierarchy.png" width="40%" align="center">
 
 ## TO DO:
-+ **DB.txt 파일 입출력**
-  + 파일 이어쓰기로 변경
 + **칼로리 섭취량 계산기 함수**
     + 권장 칼로리 섭취량 계산후 화면에 나타내기
 + **사용자 정보 변경 버튼**
