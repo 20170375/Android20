@@ -41,15 +41,20 @@
 ## 코드 계층도
 <img src="./images/class_list.png" width="15%" align="center">     <img src="./images/class_hierarchy.png" width="40%" align="center">
 
-## TO DO:
-+ **칼로리 섭취량 계산기 함수**
-    + 권장 칼로리 섭취량 계산후 화면에 나타내기
+->[코드 설명](https://github.com/20170375/Android20/blob/main/%EC%BD%94%EB%93%9C%EC%84%A4%EB%AA%85.md)
+
+## TO DO
 + **사용자 정보 변경 버튼**
-    + txt파일 저장기능 
+    + txt파일 저장기능
+    + user_info.txt 기반으로 권장 칼로리 섭취량 계산후 화면에 나타내기
++ **db.txt 불러와서 영양소 섭취 percentage 계산 구현**
+    + 최근 한달치 영양소 4개 섭취 비율을 계산하는 식으로~
+    + percentage 기반으로 식단 추천 리스트 선정하기
++ **카메라로 찍은 사진 사용 구현**
 + **맵View Gps기반 구현**
   + GPS 접근 권한 manifest
-  + 선택된 "음식" 식당 맵 검색 & 리스트에 어댑터로 만들어 출력
-  + 리스트에서 식당 onClick시 맵에 연동
+  + 선택된 "음식" 식당 맵 검색 & 리스트에 나타내기
+  + 리스트에서 식당 onClick시 맵으로 보여주기 연동
 + **음식 DB xml 생성**
   + 음식 몇개만 샘플form 만들기 (~*식약처에서 영양소DB 가져오면 되지만 굳이 x*~)
 + **인스타그램 버튼 활성화**
@@ -58,7 +63,7 @@
 ## 참고
 + [[ALTools블로그] 다이어트 카메라 AI 어플 관련 ](https://blog.naver.com/estpublic/221649788043)
 
-## 이미지 출처:
+## 이미지 출처
 + [스파게티 Google지도](https://www.google.co.kr/maps/search/%EC%8A%A4%ED%8C%8C%EA%B2%8C%ED%8B%B0/@37.4945461,126.956212,16.25z)
 + [뚝배기 스파게티 Google지도](https://www.google.co.kr/maps/place/%EB%9A%9D%EB%B0%B0%EA%B8%B0%EC%8A%A4%ED%8C%8C%EA%B2%8C%ED%8B%B0/@37.4947479,126.95682,16z/data=!4m8!1m2!2m1!1z7Iqk7YyM6rKM7Yuw!3m4!1s0x357ca1d403742b15:0x3da897145f0419c9!8m2!3d37.4946287!4d126.9589658)
 + [뚝배기 스파게티 네이버지도](https://map.naver.com/v5/search/%EC%8A%A4%ED%8C%8C%EA%B2%8C%ED%8B%B0/place/1246383729?c=14132389.6091893,4508314.4503595,15,0,0,0,dh&placePath=%3F%2526)
