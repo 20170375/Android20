@@ -25,7 +25,6 @@ import java.util.Objects;
 public class MainActivity extends AppCompatActivity {
     Button btnDietActivity, btnCameraActivity;
     ImageButton btnEdit;
-    View dialogView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

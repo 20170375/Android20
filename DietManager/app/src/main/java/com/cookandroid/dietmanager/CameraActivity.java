@@ -26,11 +26,12 @@ import java.util.Calendar;
 
 public class CameraActivity extends AppCompatActivity {
     ImageButton btnCamera2main, btnSelectPicture, btnInstagram;
-    TextView tvSaveTime, tvFoodName;
+    TextView tvSaveTime, tvFoodName, tvWarning;
     ImageView ivFood;
     LinearLayout dataLayout, kcalLayout;
     FrameView dataFrameView, kcalFrameView;
-    String saveTime, strFoodName="No data", strFoodData="No Data", strTotal="No Data";
+    String saveTime, strFoodKor="No data", strFoodEng="No data",
+            strFoodData="No Data", strTotalKcal="No Data";
     float kcal=935f, tans=56.21f, danb=34.48f, jiba=27.91f, natt=1250.30f, cKcal=515f, tKcal=2105f;
 
     @Override
@@ -43,6 +44,7 @@ public class CameraActivity extends AppCompatActivity {
         btnInstagram = (ImageButton) findViewById(R.id.btnInstagram);
         tvSaveTime = (TextView) findViewById(R.id.tvSaveTime);
         tvFoodName = (TextView) findViewById(R.id.tvFoodName);
+        tvWarning = (TextView) findViewById(R.id.tvWarning);
         ivFood = (ImageView) findViewById(R.id.ivFood);
         dataLayout = (LinearLayout) findViewById(R.id.dataLayout);
         kcalLayout = (LinearLayout) findViewById(R.id.kcalLayout);
@@ -75,7 +77,7 @@ public class CameraActivity extends AppCompatActivity {
         });
 
         // 오늘 칼로리 섭취량 화면에 나타내기
-        kcalFrameView = (FrameView) new FrameView(this,100,strTotal);
+        kcalFrameView = (FrameView) new FrameView(this,100,strTotalKcal);
         kcalLayout.addView(kcalFrameView);
 
         // 카메라 버튼 활성화 (갤러리, 카메라 선택)
@@ -109,8 +111,8 @@ public class CameraActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 0) {
-            if (resultCode == RESULT_OK) {
+        if (requestCode == 0){
+            if (resultCode == RESULT_OK){
                 try {
                     InputStream inputStream = getContentResolver().openInputStream(data.getData());
                     Bitmap bmp = BitmapFactory.decodeStream(inputStream);
@@ -121,12 +123,11 @@ public class CameraActivity extends AppCompatActivity {
                     // 가져온 Bitmap 파일로 음식 분석 알고리즘 실행
                     analyzeFood(bmp);
 
-                    // 가져온 음식 이름 화면에 나타내기
-                    tvFoodName.setVisibility(View.VISIBLE);
 
                     // 가져온 음식 정보 화면에 나타내기
                     loadFoodInfo();
-                    tvFoodName.setText(strFoodName);
+                    tvFoodName.setText(strFoodKor);
+                    tvFoodName.setVisibility(View.VISIBLE);
                     dataFrameView = (FrameView) new FrameView(this,360,strFoodData);
                     dataLayout.addView(dataFrameView);
 
@@ -136,7 +137,7 @@ public class CameraActivity extends AppCompatActivity {
                     // 오늘 칼로리 섭취량 update
                     kcalLayout.removeAllViews();
                     calKcal();
-                    kcalFrameView = (FrameView) new FrameView(this,100,strTotal);
+                    kcalFrameView = (FrameView) new FrameView(this,100,strTotalKcal);
                     kcalLayout.addView(kcalFrameView);
 
                     // Instagram 버튼 활성화
@@ -147,7 +148,7 @@ public class CameraActivity extends AppCompatActivity {
 
                 } catch (Exception e) {
                 }
-            } else if (resultCode == 1) {
+            } else if (resultCode == RESULT_CANCELED){
                 Toast.makeText(this, "사진 선택 취소", Toast.LENGTH_LONG).show();
             }
         }
@@ -158,18 +159,18 @@ public class CameraActivity extends AppCompatActivity {
         // DB load
         try {
             FileInputStream inFs = openFileInput("db.txt");
-            byte[] txt = new byte[1000];
+            byte[] txt = new byte[2000];
             int txtNo;
             String str = "";
-            while((txtNo=inFs.read()) != -1){
+            while((txtNo=inFs.read()) != -1)
                 str += (char)txtNo;
-            }
             inFs.close();
 
             // db.txt가 없거나 공백이면, 0으로 설정
-            if(!str.contains(" ")) {
-                cKcal = 0;
-            } else{
+//            if(!str.contains(" ")){
+//                cKcal = 0;
+//                Toast.makeText(this,"No Data",Toast.LENGTH_SHORT).show();
+//            } else{
                 String[] line = str.split("\n");
 
                 // make String today
@@ -195,26 +196,55 @@ public class CameraActivity extends AppCompatActivity {
                     cKcal += Float.parseFloat(word[2]);
                     i++;
                 }
-            }
+//            }
         } catch (IOException e){
-            Toast.makeText(getApplicationContext(),"파일 없음",
-                    Toast.LENGTH_LONG).show();
+            cKcal = 0;
         }
 
         // 불러온 정보로 String 만들기
-        strTotal = "오늘 총 섭취량" + "               " + (int)cKcal +
+        strTotalKcal = "오늘 총 섭취량" + "               " + (int)cKcal +
                 " / " + (int)tKcal + "  kcal";
+
+        // 오늘 섭취한 칼로리가 권장 섭취량을 초과할시 경고문 나타내기
+        if(cKcal > tKcal){
+            tvWarning.setVisibility(View.VISIBLE);
+        } else{
+            tvWarning.setVisibility(View.INVISIBLE);
+        }
     }
 
     // 음식 영양소 정보 불러오는 메소드
     protected void loadFoodInfo(){
 
-        ///////////////////////
-        //  음식 영양소 정보  //
-        //  load 및 대입연산  //
-        ///////////////////////
+        ////////////////////
+        //   음식 영양소   //
+        //   정보 load    //
+        ////////////////////
 
-        strFoodName = "스파게티";
+        // 음식이름 영>한 전환
+        switch (strFoodEng){
+            case "spagetti":
+                strFoodKor = "토마토 스파게티";
+                break;
+            case "sushi":
+                strFoodKor = "초밥";
+                break;
+
+            //      ~       //
+            // 앞으로 추가.. //
+            //      ~       //
+
+            default:
+                break;
+        }
+
+        // 불러온 음식 정보-임의로 설정 (토마토 스파게티)
+        kcal = 935f;
+        tans = 56.21f;
+        danb = 34.48f;
+        jiba = 27.91f;
+        natt = 1250.30f;
+
         strFoodData = "칼로리"     + "               " + kcal + "  kcal"  + "\n" +
                       "탄수화물"   + "           " +  tans + "  g"   + "\n" +
                       "단백질"   + "               " +  danb + "  g"   + "\n" +
@@ -229,11 +259,26 @@ public class CameraActivity extends AppCompatActivity {
         //    Processing    //
         //////////////////////
 
+
+        // 분석된 음식 이름-음식 임의로 설정 (토마토 스파게티)
+        strFoodEng = "spagetti";
     }
 
     // DB 최신화 메소드
     protected void dbUpdate(){
         String str = "";
+
+        // DB load
+        try {
+            FileInputStream inFs = openFileInput("db.txt");
+            byte[] txt = new byte[1000];
+            int txtNo;
+            while((txtNo=inFs.read()) != -1)
+                str += (char)txtNo;
+            inFs.close();
+        } catch (IOException e){
+            Toast.makeText(this, "fail to load db.txt", Toast.LENGTH_LONG).show();
+        }
 
         // "YY:MM:DD:HH:MM"
         Calendar cal = Calendar.getInstance();
@@ -244,7 +289,7 @@ public class CameraActivity extends AppCompatActivity {
         str += cal.get(Calendar.MINUTE) + " ";
 
         // "음식이름" + "칼로리" + "탄수화물" + "단백질" + "지방" + "나트륨"
-        str += strFoodName + " ";
+        str += strFoodEng + " ";
         str += kcal + " " + tans + " " + danb + " " + jiba + " " + natt + "\n";
 
         try {
@@ -252,8 +297,6 @@ public class CameraActivity extends AppCompatActivity {
             outFs.write(str.getBytes());
             outFs.close();
         } catch (Exception e){
-            Toast.makeText(getApplicationContext(),str,
-                    Toast.LENGTH_LONG).show();
         }
     }
 }

@@ -1,9 +1,7 @@
 package com.cookandroid.dietmanager;
 
 import android.app.AlertDialog;
-import android.app.DatePickerDialog;
 import android.app.Dialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,8 +9,6 @@ import android.view.View;
 import android.widget.NumberPicker;
 
 import androidx.fragment.app.DialogFragment;
-
-import java.io.FileOutputStream;
 
 public class NPDialog extends DialogFragment {
     public String strs[] = {"23","60"};
@@ -43,10 +39,8 @@ public class NPDialog extends DialogFragment {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 try {
-//                    FileOutputStream outFs = openFileOutput("user_info.txt", Context.MODE_PRIVATE);
-//                    String str = npAge.getValue() + " " + npWeight.getValue();
-//                    outFs.write(str.getBytes());
-//                    outFs.close();
+                    // user_info.txt FileOutStream으로 저장
+
                 } catch (Exception e){
                 }
             }

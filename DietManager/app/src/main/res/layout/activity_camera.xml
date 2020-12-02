@@ -47,8 +47,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:src="@drawable/nopicture"
-            android:adjustViewBounds="true"/>
+            android:src="@drawable/no_picture"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"/>
 
         <TextView
             android:id="@+id/tvFoodName"
@@ -78,7 +79,7 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginTop="-15dp"
-        android:layout_marginRight="-15dp"
+        android:layout_marginRight="-12dp"
         android:layout_alignParentRight="true"
         android:background="@android:color/transparent"
         android:scaleX="0.5"
@@ -87,10 +88,27 @@
         android:clickable="false"/>
 
     <LinearLayout
-        android:id="@+id/kcalLayout"
         android:layout_width="match_parent"
-        android:layout_height="39dp"
-        android:layout_margin="10dp"
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true">
+        <TextView
+            android:id="@+id/tvWarning"
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            android:layout_marginBottom="-8dp"
+            android:text="식사량을 조절해주세요!"
+            android:textStyle="italic"
+            android:textColor="#ff0000"
+            android:textSize="16dp"
+            android:gravity="center|bottom" />
+
+        <LinearLayout
+            android:id="@+id/kcalLayout"
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            android:layout_margin="10dp"
+            android:orientation="horizontal" />
+    </LinearLayout>
+
 </RelativeLayout>
