@@ -180,7 +180,6 @@ public class CameraActivity extends AppCompatActivity {
                 today += cal.get(Calendar.MONTH) + 1 + ":";
                 today += cal.get(Calendar.DAY_OF_MONTH) + ":";
                 today += cal.get(Calendar.HOUR_OF_DAY) + ":";
-                today += cal.get(Calendar.MINUTE);
 
                 // find today data
                 int i=0;
@@ -277,7 +276,7 @@ public class CameraActivity extends AppCompatActivity {
                 str += (char)txtNo;
             inFs.close();
         } catch (IOException e){
-            Toast.makeText(this, "fail to load db.txt", Toast.LENGTH_LONG).show();
+//            Toast.makeText(this, "fail to load db.txt", Toast.LENGTH_LONG).show();
         }
 
         // "YY:MM:DD:HH:MM"
