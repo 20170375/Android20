@@ -126,6 +126,7 @@ public class DietActivity extends AppCompatActivity {
         //   권장 식단 선정    //
         ////////////////////////
 
+        // 선정된 권장 식단-임의로 설정 (샘플)
         strFoodList = new String[]{
                 "치킨", "카레라이스", "초밥", "순대국밥", "스파게티", "돈까스",
                 "삼겹살", "간장게장", "김치볶음밥", "된장찌개", "와플", "설렁탕"};
