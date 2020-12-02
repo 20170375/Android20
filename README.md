@@ -39,7 +39,7 @@
 <img src="./images/camera_activity1.png" width="22%" align="center">     <img src="./images/camera_activity2.png" width="22%" align="center">     <img src="./images/camera_activity3.png" width="22%" align="center">     <img src="./images/camera_activity4.png" width="22%" align="center">
 
 ## 코드 계층도
-<img src="./images/class_image.png" width="15%" align="center">     <img src="./images/class_hierarchy.png" width="40%" align="center">
+<img src="./images/class_list.png" width="15%" align="center">     <img src="./images/class_hierarchy.png" width="40%" align="center">
 
 ## TO DO:
 + **칼로리 섭취량 계산기 함수**
