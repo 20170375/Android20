@@ -34,7 +34,7 @@
 
 **이후 섭취한 영양소 정보를 최신화하고 나면, 화면 하단 오늘 칼로리 섭취량이 업데이트 된 것을 확인할 수 있다.**
 
-**우측 상단 카메라 버튼이 [Instagram](https://www.instagram.com/) 버튼으로 변경된 것을 볼 수 있는데, 이 버튼을 누르면 #YourDiet 해시태그와 함께 아주 쉽게 인스타그램에 업로드할 수 있다.**
+**우측 상단 카메라 버튼이 [Instagram](https://www.instagram.com/) 버튼으로 변경된 것을 볼 수 있는데, 이 버튼을 누르면** #YourDiet **해시태그와 함께 아주 쉽게 인스타그램에 업로드할 수 있다.**
 
 <img src="./images/camera_activity1.png" width="22%" align="center">     <img src="./images/camera_activity2.png" width="22%" align="center">     <img src="./images/camera_activity3.png" width="22%" align="center">     <img src="./images/camera_activity4.png" width="22%" align="center">
 
@@ -42,7 +42,7 @@
 <img src="./images/class_image.png" width="15%" align="center">     <img src="./images/hierarchy.png" width="40%" align="center">
 
 ## TO DO:
-+ **DB.txt 파일 입출력
++ **DB.txt 파일 입출력**
   + 파일 이어쓰기로 변경
 + **칼로리 섭취량 계산기 함수**
     + 권장 칼로리 섭취량 계산후 화면에 나타내기
@@ -55,6 +55,7 @@
 + **음식 DB xml 생성**
   + 음식 몇개만 샘플form 만들기 (~*식약처에서 영양소DB 가져오면 되지만 굳이 x*~)
 + **인스타그램 버튼 활성화**
+  + [#YourDiet](https://www.instagram.com/explore/tags/YourDiet/) 해시태그가 이미 있다?
 
 ## 참고
 + [[ALTools블로그] 다이어트 카메라 AI 어플 관련 ](https://blog.naver.com/estpublic/221649788043)
